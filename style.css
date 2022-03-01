@@ -1,0 +1,367 @@
+
+/*ordinateur et tablettes en mode landscape*/
+
+/*  Il faut gerer le menu burger pour quand on clique on voit la liste de manu caché */
+
+/* gerer le carrousel car la dernier partie rest en noir pour qq secondes 
+(j'ai essayé de rajouter une image en plus à la fin parce que j'ai imaginé que le pb serait reglé mais non,
+je pense que c une histoire de times à gerer , j'ai essayé avant, pluseurs fois mais je pense que  c n'est pas le pb non plus */
+
+/* gerer la reception de mails via le formulaire contact */
+/* gerer le newsletters */
+/* ajouter dans le footer plus de liens vers le */
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px;
+    color: white;
+}
+
+    body, figure { 
+      margin: 0; background: #101010;
+      font-family: Istok Web, sans-serif;
+      font-weight: 100;
+}
+
+.menuetheader {
+    background-image: url(images/photos/photo_header.jpg);
+    background-repeat: no-repeat;
+    color: white;
+    height: 400px;
+}
+
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/*header fond rose tranparent pour le h1 et h2 CV*/
+header {
+    background-color: #d8b4a057;
+    margin: 0 20%;
+    padding: 10px;
+}
+
+/*texte h1 et h2 tittre du site*/
+h1, h2 {
+    text-align:center;
+}
+
+nav {
+    height: 100px;
+}
+
+nav> ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+nav> ul > li> a {
+    text-decoration: none;
+}
+
+nav> ul > li> a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+h3 {
+    text-align:center;
+    background-color: #D8B4A0;
+    padding: 20px 0;
+}
+
+.apropos {
+    display:flex;  
+}
+
+.apropos2{
+    width: 33%;
+}
+
+#imageapropos{
+    width: 100%; 
+}
+
+.texteapropos {
+    width: 67%;
+    padding-top: 75px;
+}
+
+.cvcompetences {
+    width: 33%;
+
+}
+.competences {
+    display:flex;
+}
+
+/*photo CV bloc competences*/
+.cvdana {
+    width: 80%;
+}
+
+/*liste bloc competences*/
+.listecompetences {
+    width: 67%;
+}
+
+/*bouton télécharger*/
+.monboutoncv {
+    border: 1px solid black;
+    background-color: #D8B4A0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 7px;
+}
+
+/*carrousel*/
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+    
+div#carrousel { 
+    width: 100%; overflow: hidden; 
+}
+
+figure.imagescarrousel { 
+    position: relative; 
+    width: 250%;
+    font-size: 0; animation: 17s slidy infinite; 
+}
+
+figure.imagescarrousel figure { 
+    width: 20%; 
+    height: auto;
+    display: inline-block;  position: inherit; 
+}
+
+figure.imagescarrousel img {
+    width: 100%; 
+    height: auto; 
+}
+
+figure.imagescarrousel figure figcaption { 
+    position: absolute; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    color: #fff; 
+    width: 100%;
+    font-size: 2rem; 
+    padding: .6rem; 
+}
+
+/*Contact*/
+form {
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:60px;
+    margin: 12px auto;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    position:relative;
+    z-index:1;
+}
+    
+form > input,
+form > textarea {
+    padding: 12px;
+    margin: 12px auto;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: #DBD3D8;
+    border-radius: 4px;
+    display: block;
+    width: 70vw;
+}
+    
+form > textarea {
+    height:100px;
+    resize:none;
+}
+    
+form > input[type="submit"] {
+    max-width: 20vw;
+    padding-left: 1%;
+    padding-right: 1%;
+    cursor: pointer;
+    transition: 0.35s;
+    background-color: #555;
+}
+    
+form > input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/*newletters*/
+.newsletters {
+    color: #ac5536;
+    text-align: justify;
+    padding: 12px;
+    font-family: Roboto;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    width: 650px;
+}   
+
+/*footer*/
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D77A61;
+    color: #fff;
+    height: 65px;
+    text-decoration: none;
+}
+
+/*logo clicable likedin dans le footer*/
+.linkedin {
+    text-decoration: none;
+    display: flex;
+    justify-content:space-around;
+    width: 65px;
+    position: absolute;
+}
+
+/*trois point du menu*/
+#menumobile {
+    position: absolute;
+    top: 20px;right: 20px;
+    visibility:hidden;
+}
+
+
+/*tablettes (jusqu'à la taille max de 767 px de large (de width)*/
+
+/* RESPONSIVE : MEDIA QUERIES */
+
+/*@media screen and (min-width:768px)*/ @media only screen and (max-width: 767px) {
+
+nav {
+    display: none;
+}
+
+#menumobile {
+    visibility:visible;
+}
+
+
+.logo { 
+    width: 70px; 
+    left: 0px; 
+    
+}
+
+.menuetheader {
+    height: 160px;
+}
+
+h1, h2 {
+    font-size: 25px;
+}
+
+.apropos{
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.apropos2 {
+    width: 100%;
+    justify-content: center;
+}
+#imageapropos{
+    width: 65%; 
+    margin-left: 60px;
+
+}
+.texteapropos {
+    width: 100%;
+}
+
+
+
+form > input,
+form > textarea {
+    margin: 12px -10px;
+}
+
+
+
+}
+
+/*mobile en mode portrait (jusqu'à la taille max de 450 px de large (de width)*/
+
+/*@media screen and (max-width:768px) */ @media only screen and (max-width: 450px){
+
+
+    nav {
+        display: none;
+    }
+    
+    #menumobile {
+        visibility:visible;
+    }
+    
+    
+    .logo { 
+        width: 70px;  
+        left: 0px;
+    }
+    
+    .menuetheader {
+        height: 160px;
+    }
+    
+    h1, h2 {
+        font-size: 25px;
+    }
+        
+    .apropos{
+        display:flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    #imageapropos{
+        width: 65%; 
+        margin-left: 60px;
+    }
+    .apropos2 {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .texteapropos {
+        width: 100%;
+    }
+    
+    form > input,
+    form > textarea {
+        margin: 12px -10px;
+    }
+    
+    
+}
+
+
+
